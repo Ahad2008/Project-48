@@ -12,7 +12,7 @@ coinimg = loadImage("coin.png");
 bgi = loadImage("bgi.jpg");
 collectSound = loadSound("collect.mp3");
 goSound = loadSound("go.mp3");
-bgSound = loadSound("trap.mp3");
+bgSound = loadSound("Trap.mp3");
 }
 
 function setup(){
