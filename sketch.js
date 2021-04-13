@@ -1,4 +1,4 @@
-var ground, player, playerimg, playerP, P1, P2, coin, coinimg, platformGroup, invisp1, coinGroup, collectSound, goSound, wrongpGroup;
+var ground, player, playerimg, playerP, P1, P2, coin, coinimg, platformGroup, invisp1, coinGroup, collectSound, goSound, wrongpGroup, bgSound;
 var score = 0;
 var PLAY = 1;
 var END = 0;
