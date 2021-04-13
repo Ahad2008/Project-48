@@ -4,6 +4,7 @@ var PLAY = 1;
 var END = 0;
 var gameState = PLAY;
 var check = 1;
+var x = 1;
 
 function preload(){
 playerimg = loadImage("man.png");
@@ -11,6 +12,7 @@ coinimg = loadImage("coin.png");
 bgi = loadImage("bgi.jpg");
 collectSound = loadSound("collect.mp3");
 goSound = loadSound("go.mp3");
+bgSound = loadSound("trap.mp3");
 }
 
 function setup(){
@@ -40,6 +42,11 @@ wrongpGroup = new Group();
 function draw(){
 background(bgi);
 if (gameState === PLAY) {
+    
+    if(x === 1){
+        bgSound.play();
+        x = 0;
+    }
  
     bg.velocityX = -(5 + 3* score/2);
     if (bg.x < 130){
@@ -89,6 +96,7 @@ if (gameState === END){
     goSound.play();
     check = 0;
     }
+    bgSound.stop();
 }
 fill("white");
 textSize(30);
@@ -105,12 +113,12 @@ if(frameCount % 100 === 0){
     P2.shapeColor = "orange";
     P2.velocityX = -(5 + 3* score/2);
 
-    invisp1 = createSprite(1200, 140, 150, 10);
+    invisp1 = createSprite(1200, 100, 150, 1);
     invisp1.visible = false;    
     invisp1.velocityX = -(5 + 3* score/2);
     //invisp1.debug = true;
     
-    invisp2 = createSprite(1200, 540, 150, 10);
+    invisp2 = createSprite(1200, 540, 150, 5);
     invisp2.visible = false;
     invisp2.velocityX = -(5 + 3* score/2);
     //invisp2.debug = true;
